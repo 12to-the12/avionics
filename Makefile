@@ -1,5 +1,5 @@
 all: default
-default: format lint typecheck test
+default: format lint typecheck test run
 
 
 run:
@@ -20,7 +20,7 @@ typecheck:
 	./venv/bin/mypy ./src/*.py
 
 test:
-	./venv/bin/pytest ./src/*.py
+	- ./venv/bin/pytest ./src/*.py
 
 clean:
 	rm -rf ./venv

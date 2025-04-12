@@ -1,26 +1,29 @@
+BIN = ./.venv/bin
+SRC = ./src/*.py
 all: default
 default: format lint typecheck test run
 
-
 run:
-	./venv/bin/python ./src/main.py
+	$(BIN)/python ./src/main.py
 
 install: clean
-	python -m venv venv
-	./venv/bin/python -m pip install --upgrade pip
-	./venv/bin/python -m pip install -r requirements.txt
+	uv venv
+	uv pip install -r requirements.txt
 
 format:
-	./venv/bin/ruff format
+	$(BIN)/ruff format
 
 lint:
-	./venv/bin/ruff check
+	$(BIN)/ruff check
 
 typecheck:
-	./venv/bin/mypy ./src/*.py
+	$(BIN)/mypy $(SRC)
 
-test:
-	- ./venv/bin/pytest ./src/*.py
+test: format typecheck
+	pytest $(SRC)
 
 clean:
 	rm -rf ./venv
+	rm -rf ./.venv
+	rm -rf ./.mypy_cache
+	

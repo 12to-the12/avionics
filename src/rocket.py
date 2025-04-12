@@ -1,6 +1,5 @@
 from accelerometer import Accelerometer
 from altimeter import Altimeter
-import altimeter
 from radio import Radio
 from servo import Servo
 from gps import GPS

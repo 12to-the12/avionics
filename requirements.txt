@@ -1,3 +1,11 @@
 ruff
 mypy
 pytest
+adafruit-python-shell # circuitpython compatibility
+
+adafruit-circuitpython-lsm303-accel # LSM303AGR accelerometer
+
+adafruit-circuitpython-lis2mdl # LSM303AGR magnometer
+
+RPi.GPIO
+smbus

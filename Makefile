@@ -6,6 +6,9 @@ default: format lint typecheck test run
 run:
 	$(BIN)/python ./src/main.py
 
+power:
+	$(BIN)/python ./utils/INA219.py
+
 install: clean
 	uv venv
 	uv pip install -r requirements.txt

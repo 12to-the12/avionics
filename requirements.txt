@@ -21,3 +21,5 @@ adafruit-circuitpython-bmp3xx
 RPi.GPIO
 smbus
 pint
+adafruit-circuitpython-rfm9x
+numpy
